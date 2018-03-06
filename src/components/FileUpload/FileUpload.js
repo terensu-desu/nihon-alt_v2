@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import M from "materialize-css";
 
-class Fileupload extends Component {
+class FileUpload extends Component {
 	componentDidMount() {
 		M.FormSelect.init(this.select)
 	}
@@ -77,4 +77,4 @@ class Fileupload extends Component {
 	}
 };
 
-export default Fileupload;
+export default FileUpload;
