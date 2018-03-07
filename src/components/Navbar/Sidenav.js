@@ -8,7 +8,9 @@ class Sidenav extends Component {
 	componentDidMount() {
 		const options = {coverTrigger: false};
 		M.Dropdown.init(this.esTriggerM, options);
-		M.Dropdown.init(this.jhsTriggerM, options);
+		M.Dropdown.init(this.jhs1TriggerM, options);
+		M.Dropdown.init(this.jhs2TriggerM, options);
+		M.Dropdown.init(this.jhs3TriggerM, options);
 		M.Dropdown.init(this.hsTriggerM, options);
 		M.Dropdown.init(this.snTriggerM, options);
 	}
@@ -27,10 +29,28 @@ class Sidenav extends Component {
 				</li>
 				<li>
 					<a
-						ref={(jhsTriggerM) => {this.jhsTriggerM = jhsTriggerM}}
+						ref={(jhs1TriggerM) => {this.jhs1TriggerM = jhs1TriggerM}}
 						className="dropdown-trigger" 
-						data-target="jhsDropdownM">
-							Jr. High School
+						data-target="jhs1DropdownM">
+							Jr. High Year 1
+							<i className="material-icons right"><span>arrow_drop_down</span></i>
+					</a>
+				</li>
+				<li>
+					<a
+						ref={(jhs2TriggerM) => {this.jhs2TriggerM = jhs2TriggerM}}
+						className="dropdown-trigger" 
+						data-target="jhs2DropdownM">
+							Jr. High Year 2
+							<i className="material-icons right"><span>arrow_drop_down</span></i>
+					</a>
+				</li>
+				<li>
+					<a
+						ref={(jhs3TriggerM) => {this.jhs3TriggerM = jhs3TriggerM}}
+						className="dropdown-trigger" 
+						data-target="jhs3DropdownM">
+							Jr. High Year 3
 							<i className="material-icons right"><span>arrow_drop_down</span></i>
 					</a>
 				</li>
@@ -53,32 +73,51 @@ class Sidenav extends Component {
 					</a>
 				</li>
 				<ul id="esDropdownM" className="dropdown-content">
-				  <li><NavLink to="/es">Activities</NavLink></li>
-				  <li><NavLink to="/es">Games</NavLink></li>
-				  <li><NavLink to="/es">Songs</NavLink></li>
+				  <li><NavLink to="/pages/es">Activities</NavLink></li>
+				  <li><NavLink to="/pages/es">Games</NavLink></li>
+				  <li><NavLink to="/pages/es">Songs</NavLink></li>
 				</ul>
-				<ul id="jhsDropdownM" className="dropdown-content">
-				  <li><NavLink to="/jhs">Unit 1</NavLink></li>
-				  <li><NavLink to="/jhs">Unit 2</NavLink></li>
-				  <li><NavLink to="/jhs">Unit 3</NavLink></li>
-				  <li><NavLink to="/jhs">Unit 4</NavLink></li>
-				  <li><NavLink to="/jhs">Unit 5</NavLink></li>
-				  <li><NavLink to="/jhs">Unit 6</NavLink></li>
-				  <li><NavLink to="/jhs">Unit 7</NavLink></li>
-				  <li><NavLink to="/jhs">Unit 8</NavLink></li>
-				  <li><NavLink to="/jhs">Unit 9</NavLink></li>
-				  <li><NavLink to="/jhs">Unit 10</NavLink></li>
-				  <li><NavLink to="/jhs">Unit 11</NavLink></li>
-				  <li><NavLink to="/jhs">Extras</NavLink></li>
+				<ul id="jhs1DropdownM" className="dropdown-content">
+				  <li><NavLink to="/pages/jhsyear1/unit1/part1">Unit 1</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear1/unit2/part1">Unit 2</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear1/unit3/part1">Unit 3</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear1/unit4/part1">Unit 4</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear1/unit5/part1">Unit 5</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear1/unit6/part1">Unit 6</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear1/unit7/part1">Unit 7</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear1/unit8/part1">Unit 8</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear1/unit9/part1">Unit 9</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear1/unit10/part1">Unit 10</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear1/unit11/part1">Unit 11</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear1/unitex/part1">Extras</NavLink></li>
+				</ul>
+				<ul id="jhs2DropdownM" className="dropdown-content">
+				  <li><NavLink to="/pages/jhsyear2/unit1/">Unit 1</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear2/unit2/">Unit 2</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear2/unit3/">Unit 3</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear2/unit4/">Unit 4</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear2/unit5/">Unit 5</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear2/unit6/">Unit 6</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear2/unit7/">Unit 7</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear2/unitex/">Extras</NavLink></li>
+				</ul>
+				<ul id="jhs3DropdownM" className="dropdown-content">
+				  <li><NavLink to="/pages/jhsyear3/unit1/">Unit 1</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear3/unit2/">Unit 2</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear3/unit3/">Unit 3</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear3/unit4/">Unit 4</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear3/unit5/">Unit 5</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear3/unit6/">Unit 6</NavLink></li>
+				  <li><NavLink to="/pages/jhsyear3/unitex/">Extras</NavLink></li>
 				</ul>
 				<ul id="snDropdownM" className="dropdown-content">
-				  <li><NavLink to="/sn">Activities</NavLink></li>
-				  <li><NavLink to="/sn">Games</NavLink></li>
-				  <li><NavLink to="/sn">Songs</NavLink></li>
+				  <li><NavLink to="/pages/sn">Activities</NavLink></li>
+				  <li><NavLink to="/pages/sn">Games</NavLink></li>
+				  <li><NavLink to="/pages/sn">Songs</NavLink></li>
 				</ul>
 				<ul id="hsDropdownM" className="dropdown-content">
-				  <li><NavLink to="/hs">Activities</NavLink></li>
-				  <li><NavLink to="/hs">Games</NavLink></li>
+				  <li><NavLink to="/pages/hs">Activities</NavLink></li>
+				  <li><NavLink to="/pages/hs">Games</NavLink></li>
 				</ul>
 			</Aux>
 		)
