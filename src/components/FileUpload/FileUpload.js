@@ -6,7 +6,8 @@ class FileUpload extends Component {
 		M.FormSelect.init(this.select)
 	}
 
-	handleSubmit = () => {
+	handleSubmit = (event) => {
+		event.preventDefault();
 		console.log("Form was submitted");
 	}
 
