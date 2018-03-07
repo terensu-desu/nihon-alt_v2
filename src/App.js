@@ -1,24 +1,30 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 
 import Aux from "./hoc/Aux";
 import Home from "./containers/Home/Home";
+import Materials from "./containers/Materials/Materials";
 import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
-import Materials from "./components/Materials/Materials";
 
 class App extends Component {
   render() {
     return (
       <Router className="App">
-      	<Aux>
-		    	<Navbar />
-		    	<Banner />
-	      	<Switch>
-		        <Route path="/pages/:section/:unit" component={Materials} />
-		        <Route exact path="/" component={Home} />
-	      	</Switch>
-      	</Aux>
+        <Aux>
+          <Navbar />
+          <Banner />
+          <Switch>
+            <Route path="/pages/:section/:unit/:part" component={Materials} />
+            <Route exact path="/" component={Home} />
+            <Redirect to="/" />
+          </Switch>
+        </Aux>
       </Router>
     );
   }
