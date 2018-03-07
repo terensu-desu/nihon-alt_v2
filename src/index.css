@@ -2,8 +2,55 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #f5f5f5;
 }
 
 span {
 	color: #bc002d;
+}
+
+nav, .sidenav {
+  background-color: #f5f5f5;
+}
+
+a {
+	color: #bc002d !important;
+}
+
+.nav-wrapper {
+	padding: 0 30px !important;
+}
+
+.nav-wrapper a, .dropdown-content li a, li span {
+	color: #000 !important;
+}
+.banner-text {
+	padding-left: 20px;
+	color: #fff;
+	text-shadow: 2px 2px 2px black;
+}
+
+.btn {
+	background-color: #bc002d !important;
+}
+
+.btn:hover {
+	background-color: #ff5252 !important;
+}
+
+.btn:active {
+	background-color: #ff5252 !important;
+}
+.page-link {
+	margin: 22px 5px 0 0 !important;
+	color: white !important;
+}
+.page-link:last-child {
+	margin: 22px 0 0 0 !important;
+}
+
+.card-image {
+	max-height: 380px;
+	object-fit: contain;
+	overflow: hidden;
 }
