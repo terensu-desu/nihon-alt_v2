@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import Blog from "../../components/Blog/Blog";
 import FileUpload from "../../components/FileUpload/FileUpload";
-//import styles from "./Home.css";
 
 class Home extends Component {
 	state = {};
