@@ -6,6 +6,10 @@ class FileUpload extends Component {
 		M.FormSelect.init(this.select)
 	}
 
+	handleSubmit = () => {
+		console.log("Form was submitted");
+	}
+
 	render() {
 		return (
 			<div className="col m12 l4">
@@ -13,7 +17,7 @@ class FileUpload extends Component {
 					<h4 className="center">File Upload</h4>
 					<p className="caption center">People helping people. It's powerful stuff. Help contribute to NihonALT.</p>
 					<div className="row">
-						<form className="col s12">
+						<form className="col s12" onSubmit={this.handleSubmit}>
 							<div className="row">
 								<div className="input-field col s6">
 									<input 
@@ -67,7 +71,7 @@ class FileUpload extends Component {
 								</div>
 							</div>
 							<div className="center">
-								<a className="btn">Submit <i className="material-icons right">send</i></a>
+								<button className="btn">Submit <i className="material-icons right">send</i></button>
 							</div>
 						</form>
 					</div>
