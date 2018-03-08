@@ -73,51 +73,51 @@ class Sidenav extends Component {
 					</a>
 				</li>
 				<ul id="esDropdownM" className="dropdown-content">
-				  <li><NavLink to="/pages/es">Activities</NavLink></li>
-				  <li><NavLink to="/pages/es">Games</NavLink></li>
-				  <li><NavLink to="/pages/es">Songs</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/es">Activities</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/es">Games</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/es">Songs</NavLink></li>
 				</ul>
 				<ul id="jhs1DropdownM" className="dropdown-content">
-				  <li><NavLink to="/pages/jhsyear1/unit1/part1">Unit 1</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear1/unit2/part1">Unit 2</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear1/unit3/part1">Unit 3</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear1/unit4/part1">Unit 4</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear1/unit5/part1">Unit 5</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear1/unit6/part1">Unit 6</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear1/unit7/part1">Unit 7</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear1/unit8/part1">Unit 8</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear1/unit9/part1">Unit 9</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear1/unit10/part1">Unit 10</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear1/unit11/part1">Unit 11</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear1/unitex/part1">Extras</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit1/part1">Unit 1</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit2/part1">Unit 2</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit3/part1">Unit 3</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit4/part1">Unit 4</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit5/part1">Unit 5</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit6/part1">Unit 6</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit7/part1">Unit 7</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit8/part1">Unit 8</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit9/part1">Unit 9</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit10/part1">Unit 10</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit11/part1">Unit 11</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unitex/part1">Extras</NavLink></li>
 				</ul>
 				<ul id="jhs2DropdownM" className="dropdown-content">
-				  <li><NavLink to="/pages/jhsyear2/unit1/">Unit 1</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear2/unit2/">Unit 2</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear2/unit3/">Unit 3</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear2/unit4/">Unit 4</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear2/unit5/">Unit 5</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear2/unit6/">Unit 6</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear2/unit7/">Unit 7</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear2/unitex/">Extras</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear2/unit1/part1">Unit 1</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear2/unit2/part1">Unit 2</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear2/unit3/part1">Unit 3</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear2/unit4/part1">Unit 4</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear2/unit5/part1">Unit 5</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear2/unit6/part1">Unit 6</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear2/unit7/part1">Unit 7</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear2/unitex/part1">Extras</NavLink></li>
 				</ul>
 				<ul id="jhs3DropdownM" className="dropdown-content">
-				  <li><NavLink to="/pages/jhsyear3/unit1/">Unit 1</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear3/unit2/">Unit 2</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear3/unit3/">Unit 3</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear3/unit4/">Unit 4</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear3/unit5/">Unit 5</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear3/unit6/">Unit 6</NavLink></li>
-				  <li><NavLink to="/pages/jhsyear3/unitex/">Extras</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear3/unit1/part1">Unit 1</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear3/unit2/part1">Unit 2</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear3/unit3/part1">Unit 3</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear3/unit4/part1">Unit 4</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear3/unit5/part1">Unit 5</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear3/unit6/part1">Unit 6</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/jhsyear3/unitex/part1">Extras</NavLink></li>
 				</ul>
 				<ul id="snDropdownM" className="dropdown-content">
-				  <li><NavLink to="/pages/sn">Activities</NavLink></li>
-				  <li><NavLink to="/pages/sn">Games</NavLink></li>
-				  <li><NavLink to="/pages/sn">Songs</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/sn">Activities</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/sn">Games</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/sn">Songs</NavLink></li>
 				</ul>
 				<ul id="hsDropdownM" className="dropdown-content">
-				  <li><NavLink to="/pages/hs">Activities</NavLink></li>
-				  <li><NavLink to="/pages/hs">Games</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/hs">Activities</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/hs">Games</NavLink></li>
 				</ul>
 			</Aux>
 		)
