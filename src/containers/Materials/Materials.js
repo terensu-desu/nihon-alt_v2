@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import data from "../../store/worksheets/jhs.js"
+import PageStoreModule from "../../store/worksheets/worksheets.js"
 import MaterialsCards from "../../components/MaterialsCards/MaterialsCards";
 import UnitButtons from "../../components/UnitButtons/UnitButtons";
 
@@ -13,9 +13,9 @@ class Materials extends Component {
 		const section = this.props.match.params.section;
 		const unit = this.props.match.params.unit;
 		const part = this.props.match.params.part;
-		const pageData = data.getStoreData(section, unit, part) || null;
-		const unitData = data.getUnitData(section, unit) || null;
-		const pageTitle = data.getPageTitle(section, unit) || null;
+		const pageData = PageStoreModule.getStoreData(section, unit, part) || null;
+		const unitData = PageStoreModule.getUnitData(section, unit) || null;
+		const pageTitle = PageStoreModule.getPageTitle(section, unit) || null;
 		this.setState({
 			pageData: pageData,
 			unitData: unitData,
@@ -27,9 +27,9 @@ class Materials extends Component {
 		const section = nextProps.match.params.section;
 		const unit = nextProps.match.params.unit;
 		const part = nextProps.match.params.part;
-		const pageData = data.getStoreData(section, unit, part) || null;
-		const unitData = data.getUnitData(section, unit) || null;
-		const pageTitle = data.getPageTitle(section, unit) || null;
+		const pageData = PageStoreModule.getStoreData(section, unit, part) || null;
+		const unitData = PageStoreModule.getUnitData(section, unit) || null;
+		const pageTitle = PageStoreModule.getPageTitle(section, unit) || null;
 		this.setState({
 			pageData: pageData,
 			unitData: unitData,
@@ -52,6 +52,7 @@ class Materials extends Component {
 						<UnitButtons url={this.props.match.params} unitData={this.state.unitData} />
 					</div>
 				</div>
+				<hr />
 				<div className="row">
 			  	<MaterialsCards pageData={this.state.pageData} />
 			  </div>
