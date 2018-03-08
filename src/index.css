@@ -1,16 +1,17 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #f5f5f5;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: #f5f5f5;
 }
 
 span {
 	color: #bc002d;
 }
 
-nav, .sidenav {
-  background-color: #f5f5f5;
+nav,
+.sidenav {
+	background-color: #f5f5f5;
 }
 
 a {
@@ -21,9 +22,12 @@ a {
 	padding: 0 30px !important;
 }
 
-.nav-wrapper a, .dropdown-content li a, li span {
+.nav-wrapper a,
+.dropdown-content li a,
+.select-wrapper ul li span {
 	color: #000 !important;
 }
+
 .banner-text {
 	padding-left: 20px;
 	color: #fff;
@@ -38,9 +42,10 @@ a {
 	background-color: #ff5252 !important;
 }
 
-.btn:active {
+.btn:active, .btn-active {
 	background-color: #ff5252 !important;
 }
+
 .page-link {
 	margin: 22px 5px 0 0 !important;
 	color: white !important;
@@ -50,7 +55,13 @@ a {
 }
 
 .card-image {
-	max-height: 380px;
+	max-height: 350px;
 	object-fit: contain;
 	overflow: hidden;
+}
+
+.card-content {
+	max-height: 250px !important;
+	min-height: 249px !important;
+	overflow: auto !important;
 }
