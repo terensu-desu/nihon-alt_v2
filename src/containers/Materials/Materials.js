@@ -28,7 +28,7 @@ class Materials extends Component {
 		const unit = nextProps.match.params.unit;
 		const part = nextProps.match.params.part;
 		const pageData = PageStoreModule.getStoreData(section, unit, part) || null;
-		const unitData = PageStoreModule.getUnitData(section, unit) || null;
+		const unitData = PageStoreModule.getUnitData(unit) || null;
 		const pageTitle = PageStoreModule.getPageTitle(section, unit) || null;
 		this.setState({
 			pageData: pageData,
