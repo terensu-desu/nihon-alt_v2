@@ -8,7 +8,7 @@ const materialscards = props => {
 		<div className="col s12 m4 l3 offset-m4 offset-l5">
 	    <div className="card">
 	      <div className="card-image">
-	        <img src={WIPimage} />
+	        <img src={WIPimage} alt="WIP placeholder" />
 	      </div>
 	      <div className="card-content">
 	        <span className="card-title">This page is incomplete</span>
@@ -19,10 +19,10 @@ const materialscards = props => {
 	);
 	if(props.pageData) {
 		cardMap = props.pageData.map(card => (
-			<div className="col s12 m4" key={card.title}>
+			<div className="col s12 m4 l3" key={card.id}>
 		    <div className="card">
 		      <div className="card-image">
-		        <img src={card.image} />
+		        <img src={card.image} alt={card.title} />
 		      </div>
 		      <div className="card-content">
 		        <span className="card-title">{card.title}</span>
