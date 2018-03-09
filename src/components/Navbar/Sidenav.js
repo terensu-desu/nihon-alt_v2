@@ -7,26 +7,20 @@ import Aux from "../../hoc/Aux";
 class Sidenav extends Component {
 	componentDidMount() {
 		const options = {coverTrigger: false};
-		M.Dropdown.init(this.esTriggerM, options);
 		M.Dropdown.init(this.jhs1TriggerM, options);
 		M.Dropdown.init(this.jhs2TriggerM, options);
 		M.Dropdown.init(this.jhs3TriggerM, options);
 		M.Dropdown.init(this.hsTriggerM, options);
-		M.Dropdown.init(this.snTriggerM, options);
+		M.Dropdown.init(this.snesTriggerM, options);
 	}
 
 	render() {
+		let logout = "";
+		if(this.props.isAuth) {
+			logout = <li><a onClick={this.props.onLogout}>Logout</a></li>;
+		}
 		return (
 			<Aux>
-				<li>
-					<a 
-						ref={(esTriggerM) => {this.esTriggerM = esTriggerM}}
-						className="dropdown-trigger" 
-						data-target="esDropdownM">
-							Elementary School
-							<i className="material-icons right"><span>arrow_drop_down</span></i>
-					</a>
-				</li>
 				<li>
 					<a
 						ref={(jhs1TriggerM) => {this.jhs1TriggerM = jhs1TriggerM}}
@@ -56,10 +50,10 @@ class Sidenav extends Component {
 				</li>
 				<li>
 					<a
-						ref={(snTriggerM) => {this.snTriggerM = snTriggerM}}
+						ref={(snesTriggerM) => {this.snesTriggerM = snesTriggerM}}
 						className="dropdown-trigger" 
-						data-target="snDropdownM">
-							Special Needs
+						data-target="snesDropdownM">
+							Special Needs / ES
 							<i className="material-icons right"><span>arrow_drop_down</span></i>
 					</a>
 				</li>
@@ -72,11 +66,7 @@ class Sidenav extends Component {
 							<i className="material-icons right"><span>arrow_drop_down</span></i>
 					</a>
 				</li>
-				<ul id="esDropdownM" className="dropdown-content">
-				  <li><NavLink className="sidenav-close" to="/pages/es">Activities</NavLink></li>
-				  <li><NavLink className="sidenav-close" to="/pages/es">Games</NavLink></li>
-				  <li><NavLink className="sidenav-close" to="/pages/es">Songs</NavLink></li>
-				</ul>
+				<div>{logout}</div>
 				<ul id="jhs1DropdownM" className="dropdown-content">
 				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit1/part1">Unit 1</NavLink></li>
 				  <li><NavLink className="sidenav-close" to="/pages/jhsyear1/unit2/part1">Unit 2</NavLink></li>
@@ -110,10 +100,10 @@ class Sidenav extends Component {
 				  <li><NavLink className="sidenav-close" to="/pages/jhsyear3/unit6/part1">Unit 6</NavLink></li>
 				  <li><NavLink className="sidenav-close" to="/pages/jhsyear3/unitex/part1">Extras</NavLink></li>
 				</ul>
-				<ul id="snDropdownM" className="dropdown-content">
-				  <li><NavLink className="sidenav-close" to="/pages/sn">Activities</NavLink></li>
-				  <li><NavLink className="sidenav-close" to="/pages/sn">Games</NavLink></li>
-				  <li><NavLink className="sidenav-close" to="/pages/sn">Songs</NavLink></li>
+				<ul id="snesDropdownM" className="dropdown-content">
+				  <li><NavLink className="sidenav-close" to="/pages/snes">Activities</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/snes">Games</NavLink></li>
+				  <li><NavLink className="sidenav-close" to="/pages/snes">Songs</NavLink></li>
 				</ul>
 				<ul id="hsDropdownM" className="dropdown-content">
 				  <li><NavLink className="sidenav-close" to="/pages/hs">Activities</NavLink></li>

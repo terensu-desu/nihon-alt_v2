@@ -1,22 +1,29 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
 import M from "materialize-css";
 
 import Sidenav from "./Sidenav";
+import * as actions from "../../store/actions/";
 
 class Navbar extends Component {
 	componentDidMount() {
 		const options = {coverTrigger: false};
-		M.Dropdown.init(this.esTrigger, options);
 		M.Dropdown.init(this.jhs1Trigger, options);
 		M.Dropdown.init(this.jhs2Trigger, options);
 		M.Dropdown.init(this.jhs3Trigger, options);
 		M.Dropdown.init(this.hsTrigger, options);
-		M.Dropdown.init(this.snTrigger, options);
+		M.Dropdown.init(this.snesTrigger, options);
 		M.Sidenav.init(this.sidenav);
 	}
 
 	render() {
+		let logout = null;
+		if(this.props.isAuth) {
+			logout = (
+				<li><a onClick={this.props.onLogout}>Logout</a></li>
+			);
+		}
 		return (
 			<header>
 				<nav>
@@ -26,15 +33,6 @@ class Navbar extends Component {
 							<i className="material-icons">menu</i>
 						</a>
 						<ul id="nav-mobile" className="right hide-on-med-and-down">
-							<li>
-								<a 
-									ref={(esTrigger) => {this.esTrigger = esTrigger}}
-									className="dropdown-trigger" 
-									data-target="esDropdown">
-										Elementary
-										<i className="material-icons right"><span>arrow_drop_down</span></i>
-								</a>
-							</li>
 							<li>
 								<a
 									ref={(jhs1Trigger) => {this.jhs1Trigger = jhs1Trigger}}
@@ -64,10 +62,10 @@ class Navbar extends Component {
 							</li>
 							<li>
 								<a
-									ref={(snTrigger) => {this.snTrigger = snTrigger}}
+									ref={(snesTrigger) => {this.snesTrigger = snesTrigger}}
 									className="dropdown-trigger" 
-									data-target="snDropdown">
-										Special Needs
+									data-target="snesDropdown">
+										Special Needs / ES
 										<i className="material-icons right"><span>arrow_drop_down</span></i>
 								</a>
 							</li>
@@ -80,14 +78,10 @@ class Navbar extends Component {
 										<i className="material-icons right"><span>arrow_drop_down</span></i>
 								</a>
 							</li>
+							{logout}
 						</ul>
 					</div>
 				</nav>
-				<ul id="esDropdown" className="dropdown-content">
-				  <li><NavLink to="/pages/es">Activities</NavLink></li>
-				  <li><NavLink to="/pages/es">Games</NavLink></li>
-				  <li><NavLink to="/pages/es">Songs</NavLink></li>
-				</ul>
 				<ul id="jhs1Dropdown" className="dropdown-content">
 				  <li><NavLink to="/pages/jhsyear1/unit1/part1">Unit 1</NavLink></li>
 				  <li><NavLink to="/pages/jhsyear1/unit2/part1">Unit 2</NavLink></li>
@@ -121,10 +115,10 @@ class Navbar extends Component {
 				  <li><NavLink to="/pages/jhsyear3/unit6/part1">Unit 6</NavLink></li>
 				  <li><NavLink to="/pages/jhsyear3/unitex/part1">Extras</NavLink></li>
 				</ul>
-				<ul id="snDropdown" className="dropdown-content">
-				  <li><NavLink to="/pages/sn">Activities</NavLink></li>
-				  <li><NavLink to="/pages/sn">Games</NavLink></li>
-				  <li><NavLink to="/pages/sn">Songs</NavLink></li>
+				<ul id="snesDropdown" className="dropdown-content">
+				  <li><NavLink to="/pages/snes">Activities</NavLink></li>
+				  <li><NavLink to="/pages/snes">Games</NavLink></li>
+				  <li><NavLink to="/pages/snes">Songs</NavLink></li>
 				</ul>
 				<ul id="hsDropdown" className="dropdown-content">
 				  <li><NavLink to="/pages/hs">Activities</NavLink></li>
@@ -135,11 +129,23 @@ class Navbar extends Component {
 					className="sidenav" 
 					id="mobile-sidebar">
 					<h4 className="center">Nihon <span>ALT</span></h4>
-					<Sidenav/>
+					<Sidenav isAuth={this.props.isAuth} onLogout={this.props.onLogout} />
 				</ul>
 			</header>
 		)
 	}
 }
 
-export default Navbar;
+const mapStateToProps = state => {
+	return {
+		isAuth: state.auth.token !== null
+	};
+};
+
+const mapDispatchToProps = dispatch => {
+	return {
+		onLogout: () => dispatch(actions.logout())
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
