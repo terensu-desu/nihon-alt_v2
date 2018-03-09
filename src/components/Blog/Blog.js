@@ -24,8 +24,8 @@ const blog = (props) => {
 			    </li>
 				</ul>
 				<div className="center">
-					<button className="btn">Newer articles <i className="material-icons left">navigate_before</i></button>
-					<button className="btn">Older articles <i className="material-icons right">navigate_next</i></button>
+					<button className="btn blog-btn">Newer articles <i className="material-icons left">navigate_before</i></button>
+					<button className="btn blog-btn">Older articles <i className="material-icons right">navigate_next</i></button>
 				</div>
 			</div>
 		</div>
