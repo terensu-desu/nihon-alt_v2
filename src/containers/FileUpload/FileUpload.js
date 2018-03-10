@@ -134,7 +134,7 @@ class FileUpload extends Component {
 				},
 			}
 		});
-		M.toast({html: "Thank you!", classes: "rounded", displayLength: 10000});
+		M.toast({html: "Thank you!", classes: "rounded", displayLength: 3000});
 	}
 
 	render() {
@@ -175,8 +175,7 @@ class FileUpload extends Component {
 							placeholder="Enter detailed instructions here."
 							className="materialize-textarea"
 							value={this.state.formData.instructions.value}
-							onChange={(event) => this.handleOnChange(event, "instructions")}
-							onClick={() => M.toast({html: "Thank you!", classes: "rounded", displayLength: 5000})}>
+							onChange={(event) => this.handleOnChange(event, "instructions")}>
 						</textarea>
 					</div>
 				</div>
