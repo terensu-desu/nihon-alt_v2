@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 
 import Aux from "./hoc/Aux";
-import Home from "./containers/Home/Home";
 import Materials from "./containers/Materials/Materials";
+import Home from "./components/Home/Home";
 import Banner from "./components/Banner/Banner";
 import Navbar from "./components/Navbar/Navbar";
 
