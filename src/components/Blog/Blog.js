@@ -1,35 +1,73 @@
-import React from 'react';
+import React, { Component } from "react";
+import BlogStoreModule from "../../store/articles/articles";
+import Articles from "../Articles/Articles";
 
-const blog = (props) => {
+class Blog extends Component {
+	state = {
+		articlePage: 1,
+		articles: null,
+		maxPage: null
+	}
 
-	return (
-		<div className="col m12 l8">
-			<div className="card-panel">
-				<h4 className="center">Otsukare News</h4>
-				<ul className="collection">
-					<li className="collection-item">
-			      <h5 className="title">My Transformation from ALT to Super ALT</h5>
-			      <h6 className="red-text">Nate G.</h6>
-			      <p>Lorem ipsum pimpin' sit amizzle, consectetuer adipiscing crunk. Yo sapien velizzle, doggy volutpizzle, suscipizzle crackalackin, gravida vizzle, dizzle. Pellentesque we gonna chung gizzle... <a className="blue-text">Read more</a></p>
-			    </li>
-			    <li className="collection-item">
-			      <h5 className="title">Tips for New ALTs From Grizzled Veterans</h5>
-			      <h6 className="red-text">Matthew K.</h6>
-			      <p>Lorem ipsum pimpin' sit amizzle, consectetuer adipiscing crunk. Yo sapien velizzle, doggy volutpizzle, suscipizzle crackalackin, gravida vizzle, dizzle. Pellentesque we gonna chung gizzle... <a className="blue-text">Read more</a></p>
-			    </li>
-			    <li className="collection-item">
-			      <h5 className="title">Saving Money in Japan - Slash Your Phone Bill</h5>
-			      <h6 className="red-text">Karl G.</h6>
-			      <p>Lorem ipsum pimpin' sit amizzle, consectetuer adipiscing crunk. Yo sapien velizzle, doggy volutpizzle, suscipizzle crackalackin, gravida vizzle, dizzle. Pellentesque we gonna chung gizzle... <a className="blue-text">Read more</a></p>
-			    </li>
-				</ul>
-				<div className="center">
-					<button className="btn blog-btn">Newer articles <i className="material-icons left">navigate_before</i></button>
-					<button className="btn blog-btn">Older articles <i className="material-icons right">navigate_next</i></button>
+	componentWillMount() {
+		this.setState({ maxPage: BlogStoreModule.getMaxPage() });
+	}
+
+	onNavigateNext = () => {
+		if(this.state.articlePage + 1 > this.state.maxPage) {
+			return false;
+		}
+		this.setState(prevState => {
+			return {
+				articlePage: prevState.articlePage + 1
+			};
+		});
+	}
+
+	onNavigatePrevious = () => {
+		if(this.state.articlePage === 1) {
+			return false;
+		}
+		this.setState(prevState => {
+			return {
+				articlePage: prevState.articlePage - 1
+			};
+		});
+	}
+
+	render() {
+		let prevBtnClass = "btn blog-btn";
+		let nextBtnClass = "btn blog-btn";
+		if(this.state.articlePage === 1) {
+			prevBtnClass = "btn blog-btn disabled";
+		}
+		if(this.state.articlePage === this.state.maxPage) {
+			nextBtnClass = "btn blog-btn disabled";
+		}
+		return (
+			<div className="col m12 l8">
+				<div className="card-panel">
+					<h4 className="center">Otsukare News</h4>
+					<ul className="collection">
+						<Articles page={this.state.articlePage} />
+					</ul>
+					<div className="center">
+						<button 
+							onClick={() => this.onNavigatePrevious()} 
+							className={prevBtnClass}>
+								Newer articles <i className="material-icons left">navigate_before</i>
+						</button>
+						<button 
+							onClick={() => this.onNavigateNext()} 
+							className={nextBtnClass}>
+								Older articles <i className="material-icons right">navigate_next</i>
+						</button>
+					</div>
 				</div>
 			</div>
-		</div>
-	);
+		);
+	}
 };
 
-export default blog;
+
+export default Blog;
