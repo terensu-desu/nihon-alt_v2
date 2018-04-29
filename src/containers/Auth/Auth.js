@@ -129,7 +129,7 @@ class Auth extends Component {
 									className="btn">
 										Submit <i className="material-icons right">send</i>
 								</button>
-								{this.props.error ? <p className="auth-error">{this.props.error.message}</p> : null}
+								{this.props.error ? <p className="auth-error">{this.props.error}</p> : null}
 							</div>
 						</form>
 					</div>
