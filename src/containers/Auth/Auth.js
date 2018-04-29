@@ -68,12 +68,20 @@ class Auth extends Component {
 	}
 
 	render() {
+		let emailValid = true;
+		if(this.state.formData.email.touched && !this.state.formData.email.valid) {
+			emailValid = false;
+		}
+		let passwordValid = true;
+		if(this.state.formData.password.touched && !this.state.formData.password.valid) {
+			passwordValid = false;
+		}
 		let form = (
 			<div className="row">
 				<div className="input-field col s6">
 					<input 
 						type="email" 
-						className="validate" 
+						className={emailValid ? "" : "invalid"}
 						id="email" 
 						name="email" 
 						placeholder="Your email" 
@@ -83,7 +91,7 @@ class Auth extends Component {
 				<div className="input-field col s6">
 					<input 
 						type="password" 
-						className="validate" 
+						className={passwordValid ? "" : "invalid"}
 						id="password" 
 						name="password" 
 						placeholder="Minimum 6 character password" 
@@ -121,7 +129,7 @@ class Auth extends Component {
 									className="btn">
 										Submit <i className="material-icons right">send</i>
 								</button>
-								{this.props.error ? <p>{this.props.error.message}</p> : null}
+								{this.props.error ? <p className="auth-error">{this.props.error.message}</p> : null}
 							</div>
 						</form>
 					</div>
