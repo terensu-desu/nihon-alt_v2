@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 	background-color: #f5f5f5;
 }
 
@@ -75,6 +75,14 @@ a {
 	max-height: 250px !important;
 	min-height: 249px !important;
 	overflow: auto !important;
+}
+
+.invalid {
+  border: 2px red solid;
+}
+
+.auth-error {
+  color: red;
 }
 
 /* For toast positioning */
